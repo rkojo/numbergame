@@ -1,10 +1,8 @@
 export default  class randnum{
 
   private static randnumber: number = 500;
-  private static curnum: number = 0;
   private static formernums : number[] = [];
   private static formernumsorted : number[] = []; //sorts so the floor and roof are found
-  private static limit : number = 1000;
   private static max : number = 1000;
   private static min : number = 0;
 
@@ -41,17 +39,14 @@ export default  class randnum{
 
   static correct() {
     this.formernums.push(this.randnumber);
-
   }
 
   static new() {
     this.randnumber = 500;
-    this.curnum = 0;
-    //removes all
-    while(this.formernums.length>0) {
-      this.formernums.pop();
-      this.formernumsorted.pop();
-    }
+    this.max = 1000;
+    this.min = 0;
+    this.formernums = [];
+    this.formernumsorted= []
   }
 
    static showcurrent(): any {
