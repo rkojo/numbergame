@@ -11,6 +11,7 @@
   color: white;
   font-size:20px;
   width: 10%;
+  
 }
 
 .text {
@@ -25,5 +26,10 @@
   text-align: center;
   margin-top: 3%;
   font-size: 50px;
+}
 
+.resultsscreen {
+  text-align: center;
+  align-items: center;
+  
 }

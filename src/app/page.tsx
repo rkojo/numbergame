@@ -17,7 +17,7 @@ export default function Home() {
         {show && <Showresult/>}
       </RootLayout>
     )
-
+    //ensures that everything updates
   function GraphicUpdate() {
     setguessednum(rand.showcurrent()),
     setrace(race.showrace());
@@ -28,10 +28,10 @@ export default function Home() {
     return (
     <RootLayout>
     <h1 className={styles.title}>Number Race</h1>
-    <p className={styles.text}>Think of a number and let it guess for you</p>
+    <p className={styles.text}>Think of a number and see how long it takes for your number to show up</p>
     <div>
       <p className={styles.text}>Past Numbers : {history+ " " }</p>
-      <p className={styles.text}> {rac} </p>
+      <p className={styles.text} style={{fontSize: "200%"}}> {rac} </p>
       <p className={styles.text}> {racetext} </p>
     </div>
     <h2 className={styles.guessednum}>{guessednum}</h2>  
@@ -47,9 +47,12 @@ export default function Home() {
   function Showresult() {
     return (
       <RootLayout>
+            <div className={styles.resultsscreen}>
           <p className={styles.text}>Past Numbers : {history+ " " }</p>
-          <p className={styles.text}>{race.score()}</p>
-          <button onClick={() => {rand.new(), setshow(false), race.reset(), GraphicUpdate()}}>restart</button>
+          <p className={styles.text}>Score: {race.score()}</p>
+          <button onClick={() => {rand.new(), setshow(false), race.reset(), GraphicUpdate()}} className={styles.buttons} style={{backgroundColor: "white"}}>restart</button>
+          </div>
+
       </RootLayout>
     )
   }
